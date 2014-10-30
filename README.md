@@ -1,4 +1,4 @@
 gwt-jquery
 ==========
 
-jquery impementation with GWT - jsInterop 
+JQuery impementation with GWT - jsInterop.
