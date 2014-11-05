@@ -17,6 +17,7 @@ package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.Node;
 
 /**
  * Represent a JQuery Element
