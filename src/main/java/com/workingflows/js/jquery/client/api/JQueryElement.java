@@ -17,8 +17,7 @@ package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
-import com.google.gwt.core.client.js.impl.PrototypeOfJsType;
-import com.workingflows.js.jscore.client.api.Function;
+import com.workingflows.js.jscore.client.api.core.Node;
 
 /**
  * Represent a JQuery Element
@@ -30,24 +29,35 @@ import com.workingflows.js.jscore.client.api.Function;
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
 @JsType(prototype = "jQuery")
-public interface JQueryElement {
+public interface JQueryElement extends Node {
 
-    JQueryElement append(JQueryElement element);
+    JQueryElement append(JQueryElement... element);
 
     @JsProperty
     JQueryElement html();
 
-    void data(String key, String value);
+    JQueryElement data(String key, String value);
+
+    JQueryElement text(String text);
 
     Object val();
 
     void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
 
-    void attr(String attr, Object value);
+    JQueryElement attr(String attr, Object value);
 
-    /*@PrototypeOfJsType
-    static class Prototype implements JQueryElement {
+    public static class Static {
 
-        
-    }*/
+        public static native JQueryElement $(String selector) /*-{
+         return $wnd.$(selector);
+         }-*/;
+
+        public static native JQueryElement $(JQueryElement element) /*-{
+         return $wnd.$(element);
+         }-*/;
+
+        public static native JQueryElement $(Node element) /*-{
+         return $wnd.$(element);
+         }-*/;
+    }
 }
