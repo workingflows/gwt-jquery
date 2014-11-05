@@ -15,7 +15,6 @@
  */
 package com.workingflows.js.jquery.client.factory;
 
-import com.google.gwt.dom.client.Element;
 import com.workingflows.js.jquery.client.api.Function;
 import com.workingflows.js.jquery.client.api.JQueryElement;
 
@@ -24,10 +23,7 @@ import com.workingflows.js.jquery.client.api.JQueryElement;
  * Fatories for low level creation. 
  * 
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author Cristian Rinaldi 
  */
 public class Factories {
 
