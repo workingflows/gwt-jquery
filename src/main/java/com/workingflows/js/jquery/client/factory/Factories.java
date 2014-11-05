@@ -15,6 +15,7 @@
  */
 package com.workingflows.js.jquery.client.factory;
 
+import com.google.gwt.dom.client.Element;
 import com.workingflows.js.jquery.client.api.Function;
 import com.workingflows.js.jquery.client.api.JQueryElement;
 
@@ -50,12 +51,15 @@ public class Factories {
      * @param selector
      * @return 
      */
-    public static native JQueryElement $(String selector) /*-{
+    public static native JQueryElement $(Object selector) /*-{
      return $wnd.$(selector);
      }-*/;
     
-    public static native JQueryElement $(JQueryElement element) /*-{
-     return $wnd.$(element);
-     }-*/;
-
+    //public static native JQueryElement $(JQueryElement element) /*-{
+    // return $wnd.$(element);
+    // }-*/;
+    
+    //public static native JQueryElement $(Element element) /*-{
+    // return $wnd.$(element);
+    // }-*/;
 }

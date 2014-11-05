@@ -17,8 +17,6 @@ package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
-import com.google.gwt.core.client.js.impl.PrototypeOfJsType;
-import com.workingflows.js.jscore.client.api.Function;
 
 /**
  * Represent a JQuery Element
@@ -30,7 +28,7 @@ import com.workingflows.js.jscore.client.api.Function;
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
 @JsType(prototype = "jQuery")
-public interface JQueryElement {
+public interface JQueryElement{
 
     JQueryElement append(JQueryElement element);
 
@@ -44,6 +42,12 @@ public interface JQueryElement {
     void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
 
     void attr(String attr, Object value);
+    
+    void text(String text);
+    
+    JQueryElement children();
+    
+    void remove();
 
     /*@PrototypeOfJsType
     static class Prototype implements JQueryElement {
