@@ -36,6 +36,14 @@ public interface JQueryElement extends Node {
     JQueryElement data(String key, String value);
 
     JQueryElement text(String text);
+    
+    JQueryElement[] children(String selector);
+    
+    void remove();
+    
+    JQueryElement addClass(String clazz);
+    
+    JQueryElement removeClass(String clazz);
 
     Object val();
     
