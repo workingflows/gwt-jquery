@@ -38,7 +38,15 @@ public interface JQueryElement extends Node {
     JQueryElement text(String text);
 
     Object val();
+    
+    JQueryElement[] children(String selector);
+    
+    void remove();
+    
+    JQueryElement addClass(String className);
 
+    JQueryElement removeClass(String className);
+    
     void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
 
     JQueryElement attr(String attr, Object value);
