@@ -50,6 +50,12 @@ public interface JQueryElement extends Node {
     void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
 
     JQueryElement attr(String attr, Object value);
+    
+    JQueryElement before(JQueryElement element);
+    
+    JQueryElement prepend(JQueryElement element);
+    
+    
 
     public static class Static {
 
