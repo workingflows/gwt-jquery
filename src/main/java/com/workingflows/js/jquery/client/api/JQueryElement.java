@@ -47,7 +47,9 @@ public interface JQueryElement extends Node {
 
     Object val();
     
-    void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
+    void on(String event, Function fn);
+    
+    void click(Function fn);
 
     JQueryElement attr(String attr, Object value);
     

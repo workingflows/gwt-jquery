@@ -15,7 +15,8 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+import com.google.gwt.core.client.js.JsFunction;
+
 
 /**
  * Represent a Function in JS Enviroment.
@@ -24,11 +25,10 @@ import com.google.gwt.core.client.js.JsType;
  * @author Cristian Rinaldi
  * @author Andres Testi 
  */
-@JsType
+@JsFunction
 public interface Function {
     
-    Object f(Object... o );
-
+    Object call();
 }
 
 
