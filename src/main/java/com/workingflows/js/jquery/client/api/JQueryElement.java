@@ -30,7 +30,6 @@ public interface JQueryElement extends Node {
 
     JQueryElement append(JQueryElement... element);
 
-    @JsProperty
     JQueryElement html();
 
     JQueryElement data(String key, String value);
@@ -47,7 +46,7 @@ public interface JQueryElement extends Node {
 
     Object val();
     
-    void on(String event, Function fn);
+    void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
     
     void click(Function fn);
 
