@@ -15,7 +15,6 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Node;
 
@@ -30,7 +29,9 @@ public interface JQueryElement extends Node {
 
     JQueryElement append(JQueryElement... element);
 
-    JQueryElement html();
+    String html();
+    
+    String prop(String prop);
 
     JQueryElement data(String key, String value);
 
@@ -46,7 +47,7 @@ public interface JQueryElement extends Node {
 
     Object val();
     
-    void on(String event, com.workingflows.js.jscore.client.api.Function<?, ?> fn);
+    void on(String event, Function fn);
     
     void click(Function fn);
 
@@ -55,6 +56,8 @@ public interface JQueryElement extends Node {
     JQueryElement before(JQueryElement element);
     
     JQueryElement prepend(JQueryElement element);
+
+    public void trigger(String select, Object... params);
     
     
 
@@ -69,6 +72,10 @@ public interface JQueryElement extends Node {
          }-*/;
 
         public static native JQueryElement $(Node element) /*-{
+         return $wnd.$(element);
+         }-*/;
+        
+        public static native JQueryElement $(com.google.gwt.user.client.Element element) /*-{
          return $wnd.$(element);
          }-*/;
     }

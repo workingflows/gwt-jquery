@@ -27,7 +27,7 @@ import com.google.gwt.core.client.js.JsFunction;
 @JsFunction
 public interface Function {
     
-    Object call( );
+    Object call( Event event, Object... params );
 
 }
 

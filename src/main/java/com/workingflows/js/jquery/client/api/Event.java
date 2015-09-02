@@ -2,6 +2,7 @@ package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.Element;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,31 +17,31 @@ import com.google.gwt.core.client.js.JsType;
 public interface Event {
 
     @JsProperty
-    Object data();
+    Object getData();
 
     @JsProperty
-    Object currentTarget();
+    Element getCurrentTarget();
 
     @JsProperty
-    Object delegateTarget();
+    Element getDelegateTarget();
 
     @JsProperty
-    Object result();
+    Object getResult();
 
     @JsProperty
-    String type();
+    String getType();
 
     @JsProperty
-    String metaKey();
+    String getMetaKey();
 
     @JsProperty
-    long timeStamp();
+    long getTimeStamp();
 
     @JsProperty
-    JQueryElement relatedTarget();
+    JQueryElement getRelatedTarget();
 
     @JsProperty
-    String namespace();
+    String getNamespace();
 
     void stopPropagation();
 
