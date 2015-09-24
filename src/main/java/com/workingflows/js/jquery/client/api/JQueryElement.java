@@ -30,36 +30,34 @@ public interface JQueryElement extends Node {
     JQueryElement append(JQueryElement... element);
 
     String html();
-    
+
     String prop(String prop);
 
     JQueryElement data(String key, String value);
 
     JQueryElement text(String text);
-    
+
     JQueryElement[] children(String selector);
-    
+
     void remove();
-    
+
     JQueryElement addClass(String clazz);
-    
+
     JQueryElement removeClass(String clazz);
 
     Object val();
-    
+
     void on(String event, Function fn);
-    
+
     void click(Function fn);
 
     JQueryElement attr(String attr, Object value);
-    
+
     JQueryElement before(JQueryElement element);
-    
+
     JQueryElement prepend(JQueryElement element);
 
     public void trigger(String select, Object... params);
-    
-    
 
     public static class Static {
 
@@ -74,8 +72,12 @@ public interface JQueryElement extends Node {
         public static native JQueryElement $(Node element) /*-{
          return $wnd.$(element);
          }-*/;
-        
+
         public static native JQueryElement $(com.google.gwt.user.client.Element element) /*-{
+         return $wnd.$(element);
+         }-*/;
+
+        public static native JQueryElement $(com.google.gwt.dom.client.Node element) /*-{
          return $wnd.$(element);
          }-*/;
     }
