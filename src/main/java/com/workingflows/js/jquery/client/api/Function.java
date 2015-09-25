@@ -19,16 +19,14 @@ import com.google.gwt.core.client.js.JsFunction;
 
 /**
  * Represent a Function in JS Enviroment.
- * 
+ *
  *
  * @author Cristian Rinaldi
- * @author Andres Testi 
+ * @author Andres Testi
  */
 @JsFunction
 public interface Function {
-    
-    Object call( Event event, Object... params );
+
+    Object call(Event event, Object params);
 
 }
-
-
