@@ -1,4 +1,4 @@
-/*
+    /*
  * Copyright 2014 Cristian Rinaldi & Andres Testi.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +16,7 @@
 package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.Node;
 
 /**
@@ -58,6 +59,8 @@ public interface JQueryElement extends Node {
     JQueryElement prepend(JQueryElement element);
 
     public void trigger(String select, Object... params);
+    
+    public void bind(String name, Object obj, Function f);
 
     public static class Static {
 
@@ -70,6 +73,10 @@ public interface JQueryElement extends Node {
          }-*/;
 
         public static native JQueryElement $(Node element) /*-{
+         return $wnd.$(element);
+         }-*/;
+        
+        public static native JQueryElement $(Element element) /*-{
          return $wnd.$(element);
          }-*/;
 
