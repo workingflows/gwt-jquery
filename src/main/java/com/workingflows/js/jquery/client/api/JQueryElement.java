@@ -58,9 +58,11 @@ public interface JQueryElement extends Node {
 
     JQueryElement prepend(JQueryElement element);
 
-    public void trigger(String select, Object... params);
+    public void trigger(String select, Object params);
     
     public void bind(String name, Object obj, Function f);
+    
+    public JQueryElement first();   
 
     public static class Static {
 
@@ -87,5 +89,6 @@ public interface JQueryElement extends Node {
         public static native JQueryElement $(com.google.gwt.dom.client.Node element) /*-{
          return $wnd.$(element);
          }-*/;
+
     }
 }
