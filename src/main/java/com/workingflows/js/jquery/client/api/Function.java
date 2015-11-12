@@ -24,9 +24,8 @@ import com.google.gwt.core.client.js.JsFunction;
  * @author Cristian Rinaldi
  * @author Andres Testi
  */
+@FunctionalInterface
 @JsFunction
 public interface Function {
-
     Object call(Event event, Object params);
-
 }

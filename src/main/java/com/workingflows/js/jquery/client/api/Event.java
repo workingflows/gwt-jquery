@@ -1,58 +1,54 @@
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Element;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
- * @author iron
+ * Event for JQuery
+ * 
+ * @author Cristian Rinaldi
  */
-@JsType(prototype = "jQuery.Event")
-public interface Event {
+@JsType(name = "jQuery")
+public class Event {
 
     @JsProperty
-    Object getData();
+    public native Object getData();
 
     @JsProperty
-    Element getCurrentTarget();
+    public native Element getCurrentTarget();
 
     @JsProperty
-    Element getDelegateTarget();
+    public native Element getDelegateTarget();
 
     @JsProperty
-    Object getResult();
+    public native Object getResult();
 
     @JsProperty
-    String getType();
+    public native String getType();
 
     @JsProperty
-    String getMetaKey();
+    public native String getMetaKey();
 
     @JsProperty
-    long getTimeStamp();
+    public native Long getTimeStamp();
 
     @JsProperty
-    JQueryElement getRelatedTarget();
+    public native JQueryElement getRelatedTarget();
 
     @JsProperty
-    String getNamespace();
+    public native String getNamespace();
 
-    void stopPropagation();
+    public native void stopPropagation();
 
-    void stopImmediatePropagation();
+    public native void stopImmediatePropagation();
 
-    void preventDefault();
+    public native void preventDefault();
 
-    boolean isPropagationStopped();
+    public native Boolean isPropagationStopped();
 
-    boolean isDefaultPrevented();
+    public native Boolean isDefaultPrevented();
 
-    boolean isImmediatePropagationStopped();
+    public native Boolean isImmediatePropagationStopped();
 
 }

@@ -15,9 +15,10 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.Node;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
 /**
  * Represent a JQuery Element
@@ -25,70 +26,55 @@ import com.workingflows.js.jscore.client.api.core.Node;
  *
  * @author Cristian Rinaldi
  */
-@JsType(prototype = "jQuery")
-public interface JQueryElement extends Node {
+@JsType(name = "jQuery", isNative = true, namespace = JsPackage.GLOBAL)
+public class JQueryElement extends Node {
 
-    JQueryElement append(JQueryElement... element);
+    public native JQueryElement append(JQueryElement... element);
 
-    String html();
+    public native String html();
 
-    String prop(String prop);
+    public native String prop(String prop);
 
-    JQueryElement data(String key, String value);
+    public native JQueryElement data(String key, String value);
 
-    JQueryElement text(String text);
+    public native JQueryElement text(String text);
 
-    JQueryElement[] children(String selector);
+    public native JQueryElement[] children(String selector);
 
-    void remove();
+    public native void remove();
 
-    JQueryElement addClass(String clazz);
+    public native JQueryElement addClass(String clazz);
 
-    JQueryElement removeClass(String clazz);
+    public native JQueryElement removeClass(String clazz);
 
-    Object val();
+    public native Object val();
 
-    void on(String event, Function fn);
+    public native void on(String event, Function fn);
 
-    void click(Function fn);
+    public native void click(Function fn);
 
-    JQueryElement attr(String attr, Object value);
+    public native JQueryElement attr(String attr, Object value);
 
-    JQueryElement before(JQueryElement element);
+    public native JQueryElement before(JQueryElement element);
 
-    JQueryElement prepend(JQueryElement element);
+    public native JQueryElement prepend(JQueryElement element);
 
-    public void trigger(String select, Object params);
+    public native void trigger(String select, Object params);
     
-    public void bind(String name, Object obj, Function f);
+    public native void bind(String name, Object obj, Function f);
     
-    public JQueryElement first();   
-
-    public static class Static {
-
-        public static native JQueryElement $(String selector) /*-{
-         return $wnd.$(selector);
-         }-*/;
-
-        public static native JQueryElement $(JQueryElement element) /*-{
-         return $wnd.$(element);
-         }-*/;
-
-        public static native JQueryElement $(Node element) /*-{
-         return $wnd.$(element);
-         }-*/;
-        
-        public static native JQueryElement $(Element element) /*-{
-         return $wnd.$(element);
-         }-*/;
-
-        public static native JQueryElement $(com.google.gwt.user.client.Element element) /*-{
-         return $wnd.$(element);
-         }-*/;
-
-        public static native JQueryElement $(com.google.gwt.dom.client.Node element) /*-{
-         return $wnd.$(element);
-         }-*/;
-
-    }
+    public native JQueryElement first();   
+    
+    
+    public static native JQueryElement $(String selector);
+    
+    public static native JQueryElement $(JQueryElement element);
+    
+    public static native JQueryElement $(Node element);
+    
+    public static native JQueryElement $(Element element);
+    
+    public static native JQueryElement $(com.google.gwt.user.client.Element element);
+    
+    public static native JQueryElement $(com.google.gwt.dom.client.Node element);
 }
