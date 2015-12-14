@@ -17,6 +17,7 @@ package com.workingflows.js.jquery.client.api;
 
 import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.Node;
+import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
@@ -25,18 +26,24 @@ import jsinterop.annotations.JsType;
  *
  * @author Ben Dol
  */
-@JsType(name="window", isNative = true, namespace = JsPackage.GLOBAL)
-public class JQuery extends Node {
+@JsType(isNative = true)
+public class JQuery {
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(String selector);
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(JQuery element);
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Node element);
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Element element);
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(com.google.gwt.user.client.Element element);
 
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(com.google.gwt.dom.client.Node element);
 }
