@@ -21,8 +21,7 @@ import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
 /**
- * Represent a JQuery Element
- *
+ * Represent a JQuery Element.
  *
  * @author Cristian Rinaldi
  */
@@ -63,18 +62,18 @@ public class JQueryElement extends Node {
     
     public native void bind(String name, Object obj, Function f);
     
-    public native JQueryElement first();   
-    
-    
+    public native JQueryElement first();
+
+
     public static native JQueryElement $(String selector);
-    
+
     public static native JQueryElement $(JQueryElement element);
-    
+
     public static native JQueryElement $(Node element);
-    
+
     public static native JQueryElement $(Element element);
-    
+
     public static native JQueryElement $(com.google.gwt.user.client.Element element);
-    
+
     public static native JQueryElement $(com.google.gwt.dom.client.Node element);
 }

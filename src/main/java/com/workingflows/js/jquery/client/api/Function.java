@@ -18,8 +18,7 @@ package com.workingflows.js.jquery.client.api;
 import com.google.gwt.core.client.js.JsFunction;
 
 /**
- * Represent a Function in JS Enviroment.
- *
+ * Represent a Function in JS Environment.
  *
  * @author Cristian Rinaldi
  * @author Andres Testi

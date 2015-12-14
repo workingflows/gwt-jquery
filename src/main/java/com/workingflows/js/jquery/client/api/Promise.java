@@ -35,6 +35,5 @@ public interface Promise {
     
     Promise fail(Function f);
     
-    Promise allways(Function f);
-    
+    Promise always(Function f);
 }

@@ -5,7 +5,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * Event for JQuery
+ * Event for JQuery.
  * 
  * @author Cristian Rinaldi
  */

@@ -18,8 +18,7 @@ package com.workingflows.js.jquery.client;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
- * Load the JS library if it's not loaded
- *
+ * Load the JS library if it's not loaded.
  *
  * @author Cristian Rinaldi 
  * @author Andres Testi 
@@ -35,15 +34,8 @@ public class JQueryEntryPoint implements EntryPoint {
 
     /**
      * If jQuery JS loaded?
-     * 
-     * @return 
      */
-    private native final boolean isInjected() /*-{
-     if (!(typeof $wnd.jQuery === "undefined") && !(null===$wnd.jQuery)) {
-        return true;
-     }else{
-        return false;
-     }
-     }-*/;
-
+    private native boolean isInjected() /*-{
+        return !(typeof $wnd.jQuery === "undefined") && !(null===$wnd.jQuery);
+    }-*/;
 }
