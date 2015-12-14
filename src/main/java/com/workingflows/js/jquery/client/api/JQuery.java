@@ -25,7 +25,7 @@ import jsinterop.annotations.JsType;
  *
  * @author Ben Dol
  */
-@JsType(isNative = true, namespace = JsPackage.GLOBAL)
+@JsType(name="window", isNative = true, namespace = JsPackage.GLOBAL)
 public class JQuery extends Node {
 
     public static native JQueryElement $(String selector);
