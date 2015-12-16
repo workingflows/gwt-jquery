@@ -15,7 +15,6 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.Node;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;

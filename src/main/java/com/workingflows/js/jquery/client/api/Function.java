@@ -15,7 +15,7 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsFunction;
+import jsinterop.annotations.JsFunction;
 
 /**
  * Represent a Function in JS Environment.

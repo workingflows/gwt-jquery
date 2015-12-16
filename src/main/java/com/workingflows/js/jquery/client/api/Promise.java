@@ -15,8 +15,7 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsType;
-
+import jsinterop.annotations.JsType;
 
 /**
  * Represent a JQuery Promise 
@@ -24,7 +23,7 @@ import com.google.gwt.core.client.js.JsType;
  *
  * @author Cristian Rinaldi
  */
-@JsType(prototype = "Promise")
+@JsType(name = "Promise")
 public interface Promise {
     
     Promise then(Function f);
