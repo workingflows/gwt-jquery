@@ -28,7 +28,7 @@ public class JQueryEntryPoint implements EntryPoint {
     @Override
     public void onModuleLoad() {
         if (!isInjected()) {
-            //LOADER
+            // TODO: Loader
         }
     }
 
@@ -36,6 +36,6 @@ public class JQueryEntryPoint implements EntryPoint {
      * If jQuery JS loaded?
      */
     private native boolean isInjected() /*-{
-        return !(typeof $wnd.jQuery === "undefined") && !(null===$wnd.jQuery);
+        return !(typeof $wnd.jQuery === "undefined") && !(null === $wnd.jQuery);
     }-*/;
 }

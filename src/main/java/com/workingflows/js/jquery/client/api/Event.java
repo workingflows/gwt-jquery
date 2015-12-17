@@ -50,5 +50,4 @@ public class Event {
     public native Boolean isDefaultPrevented();
 
     public native Boolean isImmediatePropagationStopped();
-
 }
