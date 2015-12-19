@@ -15,13 +15,16 @@
  */
 package com.workingflows.js.jquery.client.api;
 
+import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Node;
+import com.google.gwt.user.client.ui.UIObject;
 import com.workingflows.js.jquery.client.api.Functions.Func;
 import com.workingflows.js.jquery.client.api.Functions.Func2;
 import com.workingflows.js.jquery.client.api.Functions.Func3;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet2;
 import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
@@ -33,7 +36,31 @@ import jsinterop.annotations.JsType;
 @JsType(isNative = true)
 public class JQuery {
 
-    // Global Accessor
+    @JsOverlay
+    public static Element window() {
+        return ScriptInjector.TOP_WINDOW.<Element>cast();
+    }
+
+    // Plain Object Query
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Object plainObject);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Object plainObject, Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Object plainObject, com.workingflows.js.jscore.client.api.core.Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Object plainObject, JQueryElement context);
+
+    @JsOverlay
+    public static JQueryElement $(Object plainObject, UIObject context) {
+        return $(plainObject, context.getElement());
+    }
+
+    // String Selector Query
 
     @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(String selector);
@@ -42,7 +69,17 @@ public class JQuery {
     public static native JQueryElement $(String selector, Element context);
 
     @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(String selector, com.workingflows.js.jscore.client.api.core.Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(String selector, JQueryElement context);
+
+    @JsOverlay
+    public static JQueryElement $(String selector, UIObject context) {
+        return $(selector, context.getElement());
+    }
+
+    // JQueryElement Query
 
     @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(JQueryElement element);
@@ -51,7 +88,17 @@ public class JQuery {
     public static native JQueryElement $(JQueryElement element, Element context);
 
     @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(JQueryElement element, com.workingflows.js.jscore.client.api.core.Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(JQueryElement element, JQueryElement context);
+
+    @JsOverlay
+    public static JQueryElement $(JQueryElement element, UIObject context) {
+        return $(element, context.getElement());
+    }
+
+    // Element Query
 
     @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Element element);
@@ -60,7 +107,17 @@ public class JQuery {
     public static native JQueryElement $(Element element, Element context);
 
     @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Element element, com.workingflows.js.jscore.client.api.core.Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Element element, JQueryElement context);
+
+    @JsOverlay
+    public static JQueryElement $(Element element, UIObject context) {
+        return $(element, context.getElement());
+    }
+
+    // Node Query
 
     @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Node element);
@@ -69,9 +126,49 @@ public class JQuery {
     public static native JQueryElement $(Node element, Element context);
 
     @JsMethod(namespace = JsPackage.GLOBAL)
+    public static native JQueryElement $(Node element, com.workingflows.js.jscore.client.api.core.Element context);
+
+    @JsMethod(namespace = JsPackage.GLOBAL)
     public static native JQueryElement $(Node element, JQueryElement context);
 
-    // JQuery Specific Functions
+    @JsOverlay
+    public static JQueryElement $(Node element, UIObject context) {
+        return $(element, context.getElement());
+    }
+
+    // Generic UIObject Query
+
+    @JsOverlay
+    @SuppressWarnings("unchecked")
+    public static <T extends UIObject> JQueryElement<T> $(T uiObject) {
+        return (JQueryElement<T>) $(uiObject.getElement());
+    }
+
+    @JsOverlay
+    @SuppressWarnings("unchecked")
+    public static <T extends UIObject> JQueryElement<T> $(T uiObject, Element context) {
+        return (JQueryElement<T>) $(uiObject.getElement(), context);
+    }
+
+    @JsOverlay
+    @SuppressWarnings("unchecked")
+    public static <T extends UIObject> JQueryElement<T> $(T uiObject, com.workingflows.js.jscore.client.api.core.Element context) {
+        return (JQueryElement<T>) $(uiObject.getElement(), context);
+    }
+
+    @JsOverlay
+    @SuppressWarnings("unchecked")
+    public static <T extends UIObject> JQueryElement<T> $(T uiObject, JQueryElement context) {
+        return (JQueryElement<T>) $(uiObject.getElement(), context);
+    }
+
+    @JsOverlay
+    @SuppressWarnings("unchecked")
+    public static <T extends UIObject> JQueryElement<T> $(T uiObject, UIObject context) {
+        return (JQueryElement<T>) $(uiObject.getElement(), context.getElement());
+    }
+
+    // JQuery Global Functions
 
     /**
      * Check to see if a DOM element is a descendant of another DOM element.

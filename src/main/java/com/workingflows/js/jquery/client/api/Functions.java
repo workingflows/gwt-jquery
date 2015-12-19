@@ -75,4 +75,18 @@ public interface Functions {
     interface FuncRet3<A, B, C> {
         Object call(A param1, B param2, C param3);
     }
+
+    // Event Functions
+
+    @FunctionalInterface
+    @JsFunction
+    interface EventFunc1 {
+        void call(Event e);
+    }
+
+    @FunctionalInterface
+    @JsFunction
+    interface EventFunc2 {
+        Object call(Event e, Object o);
+    }
 }

@@ -31,7 +31,7 @@ public class Event {
     public native String getMetaKey();
 
     @JsProperty
-    public native Long getTimeStamp();
+    public native int getTimeStamp();
 
     @JsProperty
     public native JQueryElement getRelatedTarget();
