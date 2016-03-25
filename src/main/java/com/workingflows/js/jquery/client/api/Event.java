@@ -5,7 +5,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * Event for JQuery
+ * Event for JQuery.
  * 
  * @author Cristian Rinaldi
  */
@@ -31,7 +31,7 @@ public class Event {
     public native String getMetaKey();
 
     @JsProperty
-    public native Long getTimeStamp();
+    public native int getTimeStamp();
 
     @JsProperty
     public native JQueryElement getRelatedTarget();
@@ -50,5 +50,4 @@ public class Event {
     public native Boolean isDefaultPrevented();
 
     public native Boolean isImmediatePropagationStopped();
-
 }

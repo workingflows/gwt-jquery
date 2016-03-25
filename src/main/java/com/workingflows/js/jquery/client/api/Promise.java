@@ -15,26 +15,24 @@
  */
 package com.workingflows.js.jquery.client.api;
 
-import com.google.gwt.core.client.js.JsType;
-
+import com.workingflows.js.jquery.client.api.Functions.FuncRet2;
+import jsinterop.annotations.JsType;
 
 /**
  * Represent a JQuery Promise 
- * 
  *
  * @author Cristian Rinaldi
  */
-@JsType(prototype = "Promise")
+@JsType(name = "Promise")
 public interface Promise {
     
-    Promise then(Function f);
+    Promise then(FuncRet2<Event, Object> f);
     
-    Promise done(Function f);
+    Promise done(FuncRet2<Event, Object> f);
     
-    Promise when(Function f);
+    Promise when(FuncRet2<Event, Object> f);
     
-    Promise fail(Function f);
+    Promise fail(FuncRet2<Event, Object> f);
     
-    Promise allways(Function f);
-    
+    Promise always(FuncRet2<Event, Object> f);
 }
