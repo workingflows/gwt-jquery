@@ -140,32 +140,32 @@ public class JQuery {
 
     @JsOverlay
     @SuppressWarnings("unchecked")
-    public static <T extends UIObject> JQueryElement<T> $(T uiObject) {
-        return (JQueryElement<T>) $(uiObject.getElement());
+    public static <T extends UIObject> JQueryElement $(T uiObject) {
+        return $(uiObject.getElement());
     }
 
     @JsOverlay
     @SuppressWarnings("unchecked")
     public static <T extends UIObject> JQueryElement<T> $(T uiObject, Element context) {
-        return (JQueryElement<T>) $(uiObject.getElement(), context);
+        return $(uiObject.getElement(), context);
     }
 
     @JsOverlay
     @SuppressWarnings("unchecked")
     public static <T extends UIObject> JQueryElement<T> $(T uiObject, com.workingflows.js.jscore.client.api.core.Element context) {
-        return (JQueryElement<T>) $(uiObject.getElement(), context);
+        return $(uiObject.getElement(), context);
     }
 
     @JsOverlay
     @SuppressWarnings("unchecked")
     public static <T extends UIObject> JQueryElement<T> $(T uiObject, JQueryElement context) {
-        return (JQueryElement<T>) $(uiObject.getElement(), context);
+        return $(uiObject.getElement(), context);
     }
 
     @JsOverlay
     @SuppressWarnings("unchecked")
     public static <T extends UIObject> JQueryElement<T> $(T uiObject, UIObject context) {
-        return (JQueryElement<T>) $(uiObject.getElement(), context.getElement());
+        return $(uiObject.getElement(), context.getElement());
     }
 
     // JQuery Global Functions

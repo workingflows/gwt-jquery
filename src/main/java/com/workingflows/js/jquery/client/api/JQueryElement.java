@@ -1,23 +1,25 @@
-    /*
- * Copyright 2014 Cristian Rinaldi & Andres Testi.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+/*
+* Copyright 2014 Cristian Rinaldi & Andres Testi.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 package com.workingflows.js.jquery.client.api;
 
 import com.google.gwt.dom.client.Element;
+import com.workingflows.js.jquery.client.api.Functions.EventFunc;
 import com.workingflows.js.jquery.client.api.Functions.EventFunc1;
 import com.workingflows.js.jquery.client.api.Functions.EventFunc2;
+import com.workingflows.js.jquery.client.api.Functions.EventFunc3;
 import com.workingflows.js.jquery.client.api.Functions.Func;
 import com.workingflows.js.jquery.client.api.Functions.Func1;
 import com.workingflows.js.jquery.client.api.Functions.Func2;
@@ -27,7 +29,6 @@ import com.workingflows.js.jquery.client.api.Functions.FuncRet2;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet3;
 import com.workingflows.js.jscore.client.api.core.Node;
 import jsinterop.annotations.JsOverlay;
-import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -37,7 +38,7 @@ import jsinterop.annotations.JsType;
  * @author Cristian Rinaldi
  * @author Ben Dol
  */
-@JsType(name = "jQuery", isNative = true, namespace = JsPackage.GLOBAL)
+@JsType(name = "jQuery", isNative = true)
 public class JQueryElement<T> extends Node {
 
     /**
@@ -359,6 +360,15 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> bind(String eventType, EventFunc handler);
+
+    /**
+     * Attach a handler to an event for the elements.
+     * @param eventType A string containing one or more DOM event types, such as "click" or
+     *                  "submit," or custom event names.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> bind(String eventType, EventFunc1 handler);
 
     /**
@@ -369,6 +379,16 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> bind(String eventType, EventFunc2 handler);
+
+    /**
+     * Attach a handler to an event for the elements.
+     * @param eventType A string containing one or more DOM event types, such as "click" or
+     *                  "submit," or custom event names.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> bind(String eventType, Object eventData, EventFunc handler);
 
     /**
      * Attach a handler to an event for the elements.
@@ -429,6 +449,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> blur(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> blur(Object eventData, EventFunc1 handler);
 
     /**
@@ -463,6 +491,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> change(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "change" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> change(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "change" JavaScript event, or trigger that event on an element.
@@ -615,6 +651,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> contextmenu(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> contextmenu(Object eventData, EventFunc1 handler);
 
     /**
@@ -711,6 +755,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> dblclick(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> dblclick(Object eventData, EventFunc1 handler);
 
     /**
@@ -747,6 +799,17 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute at the time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> delegate(String selector, String eventType, EventFunc handler);
+
+    /**
+     * Attach a handler to one or more events for all elements that match the selector, now or in the
+     * future, based on a specific set of root elements.
+     * @param selector A selector to filter the elements that trigger the event.
+     * @param eventType A string containing one or more space-separated JavaScript event types, such as
+     *                  "click" or "keydown," or custom event names.
+     * @param handler A function to execute at the time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> delegate(String selector, String eventType, EventFunc1 handler);
 
     /**
@@ -759,6 +822,18 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> delegate(String selector, String eventType, EventFunc2 handler);
+
+    /**
+     * Attach a handler to one or more events for all elements that match the selector, now or in the
+     * future, based on a specific set of root elements.
+     * @param selector A selector to filter the elements that trigger the event.
+     * @param eventType A string containing one or more space-separated JavaScript event types, such as
+     *                  "click" or "keydown," or custom event names.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute at the time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> delegate(String selector, String eventType, Object eventData, EventFunc handler);
 
     /**
      * Attach a handler to one or more events for all elements that match the selector, now or in the
@@ -825,7 +900,7 @@ public class JQueryElement<T> extends Node {
      * @param function A function to execute for each matched element.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> each(Func2<Integer, Element> function);
+    public native JQueryElement<T> each(Func2<Object, Element> function);
 
     /**
      * Remove all child nodes of the set of matched elements from the DOM.
@@ -862,6 +937,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> error(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "error" JavaScript event.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute when the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> error(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "error" JavaScript event.
@@ -1179,6 +1262,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> focus(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "focus" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> focus(Object eventData, EventFunc1 handler);
 
     /**
@@ -1215,6 +1306,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> focusin(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "focusin" JavaScript event.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> focusin(Object eventData, EventFunc1 handler);
 
     /**
@@ -1244,6 +1343,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> focusout(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "focusout" JavaScript event.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> focusout(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "focusout" JavaScript event.
@@ -1368,6 +1475,15 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> hide(AnimateOptions options);
+
+    /**
+     * Bind two handlers to the matched elements, to be executed when the mouse pointer
+     * enters and leaves the elements.
+     * @param handlerIn A function to execute when the mouse pointer enters the element.
+     * @param handlerOut A function to execute when the mouse pointer leaves the element.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> hover(EventFunc1 handlerIn, EventFunc handlerOut);
 
     /**
      * Bind two handlers to the matched elements, to be executed when the mouse pointer
@@ -1596,6 +1712,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> keydown(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> keydown(Object eventData, EventFunc1 handler);
 
     /**
@@ -1632,6 +1756,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> keypress(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> keypress(Object eventData, EventFunc1 handler);
 
     /**
@@ -1661,6 +1793,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> keyup(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> keyup(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
@@ -1734,6 +1874,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute when the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> load(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "load" JavaScript event.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute when the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> load(Object eventData, EventFunc1 handler);
 
     /**
@@ -1765,6 +1913,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> mousedown(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> mousedown(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element.
@@ -1808,6 +1964,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> mouseenter(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "mouseenter" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> mouseenter(Object eventData, EventFunc1 handler);
 
     /**
@@ -1837,6 +2001,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> mouseleave(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "mouseleave" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> mouseleave(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "mouseleave" JavaScript event, or trigger that event on an element.
@@ -1880,6 +2052,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> mousemove(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "mousemove" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> mousemove(Object eventData, EventFunc1 handler);
 
     /**
@@ -1909,6 +2089,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> mouseout(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> mouseout(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element.
@@ -1952,6 +2140,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> mouseover(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> mouseover(Object eventData, EventFunc1 handler);
 
     /**
@@ -1981,6 +2177,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> mouseup(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> mouseup(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element.
@@ -2138,6 +2342,16 @@ public class JQueryElement<T> extends Node {
      *                value false.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> off(String events, EventFunc handler);
+
+    /**
+     * Remove an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> off(String events, EventFunc1 handler);
 
     /**
@@ -2149,6 +2363,28 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> off(String events, EventFunc2 handler);
+
+    /**
+     * Remove an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> off(String events, EventFunc3 handler);
+
+    /**
+     * Remove an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param selector A selector which should match the one originally passed to .off() when
+     *                 attaching event handlers.
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> off(String events, String selector, EventFunc handler);
 
     /**
      * Remove an event handler.
@@ -2173,6 +2409,18 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> off(String events, String selector, EventFunc2 handler);
+
+    /**
+     * Remove an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param selector A selector which should match the one originally passed to .off() when
+     *                 attaching event handlers.
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> off(String events, String selector, EventFunc3 handler);
 
     /**
      * Add an event handler.
@@ -2203,6 +2451,16 @@ public class JQueryElement<T> extends Node {
      *                value false.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> on(String events, EventFunc handler);
+
+    /**
+     * Add an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> on(String events, EventFunc1 handler);
 
     /**
@@ -2214,6 +2472,28 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> on(String events, EventFunc2 handler);
+
+    /**
+     * Add an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> on(String events, EventFunc3 handler);
+
+    /**
+     * Add an event handler.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param selector A selector which should match the one originally passed to .on() when
+     *                 attaching event handlers.
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> on(String events, String selector, EventFunc handler);
 
     /**
      * Add an event handler.
@@ -2272,6 +2552,17 @@ public class JQueryElement<T> extends Node {
      *                value false.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> one(String events, EventFunc handler);
+
+    /**
+     * Attach a handler to an event for the elements. The handler is
+     * executed at most once per element per event type.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> one(String events, EventFunc1 handler);
 
     /**
@@ -2284,6 +2575,19 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> one(String events, EventFunc2 handler);
+
+    /**
+     * Attach a handler to an event for the elements. The handler is
+     * executed at most once per element per event type.
+     * @param events One or more space-separated event types and optional namespaces, or just
+     *               namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+     * @param selector A selector which should match the one originally passed to .on() when
+     *                 attaching event handlers.
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> one(String events, String selector, EventFunc handler);
 
     /**
      * Attach a handler to an event for the elements. The handler is
@@ -2881,6 +3185,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> resize(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "resize" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> resize(Object eventData, EventFunc1 handler);
 
     /**
@@ -2910,6 +3222,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> scroll(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> scroll(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element.
@@ -2978,6 +3298,14 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> select(EventFunc2 handler);
+
+    /**
+     * Bind an event handler to the "select" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> select(Object eventData, EventFunc handler);
 
     /**
      * Bind an event handler to the "select" JavaScript event, or trigger that event on an element.
@@ -3261,6 +3589,14 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
+    public native JQueryElement<T> submit(Object eventData, EventFunc handler);
+
+    /**
+     * Bind an event handler to the "submit" JavaScript event, or trigger that event on an element.
+     * @param eventData An object containing data that will be passed to the event handler.
+     * @param handler A function to execute each time the event is triggered.
+     * @return self {@link JQueryElement}
+     */
     public native JQueryElement<T> submit(Object eventData, EventFunc1 handler);
 
     /**
@@ -3418,20 +3754,29 @@ public class JQueryElement<T> extends Node {
     /**
      * Execute all handlers and behaviors attached to the matched elements for
      * the given event type.
-     * @param eventType A string containing a JavaScript event type, such as click or submit.
+     * @param event A jQuery.Event object.
      * @param extraParameters Additional parameters to pass along to the event handler.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> trigger(String eventType, String... extraParameters);
+    public native JQueryElement<T> trigger(Event event, Object... extraParameters);
 
     /**
      * Execute all handlers and behaviors attached to the matched elements for
      * the given event type.
-     * @param event A jQuery.Event object.
+     * @param eventType A string containing a JavaScript event type, such as click or submit.
      * @param extraParameters Additional parameters to pass along to the event handler.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> trigger(Event event, String... extraParameters);
+    public native JQueryElement<T> trigger(String eventType, Object[] extraParameters);
+
+    /**
+     * Execute all handlers and behaviors attached to the matched elements for
+     * the given event type.
+     * @param eventType A string containing a JavaScript event type, such as click or submit.
+     * @param extraParameters Additional parameter to pass along to the event handler.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> trigger(String eventType, Object extraParameters);
 
     /**
      * Execute all handlers attached to an element for an event.
@@ -3439,7 +3784,7 @@ public class JQueryElement<T> extends Node {
      * @param extraParameters Additional parameters to pass along to the event handler.
      * @return self {@link JQueryElement}
      */
-    public native Object triggerHandler(String eventType, String... extraParameters);
+    public native Object triggerHandler(String eventType, Object... extraParameters);
 
     /**
      * Execute all handlers attached to an element for an event.
@@ -3447,7 +3792,7 @@ public class JQueryElement<T> extends Node {
      * @param extraParameters Additional parameters to pass along to the event handler.
      * @return self {@link JQueryElement}
      */
-    public native Object triggerHandler(Event event, String... extraParameters);
+    public native Object triggerHandler(Event event, Object... extraParameters);
 
     /**
      * Remove a previously-attached event handler from the elements.
@@ -3468,6 +3813,15 @@ public class JQueryElement<T> extends Node {
      * @return self {@link JQueryElement}
      */
     public native JQueryElement<T> unbind(String eventType);
+
+    /**
+     * Remove a previously-attached event handler from the elements.
+     * @param eventType A string containing a JavaScript event type, such as click or submit.
+     * @param handler A handler function previously attached for the event(s), or the special
+     *                value false.
+     * @return self {@link JQueryElement}
+     */
+    public native JQueryElement<T> unbind(String eventType, EventFunc handler);
 
     /**
      * Remove a previously-attached event handler from the elements.
