@@ -27,6 +27,7 @@ import com.workingflows.js.jquery.client.api.Functions.Func3;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet1;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet2;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet3;
+import com.workingflows.js.jquery.client.api.Functions.KeyEventFunc;
 import com.workingflows.js.jscore.client.api.core.Node;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -1697,14 +1698,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keydown(EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keydown(EventFunc2 handler);
+    public native JQueryElement<T> keydown(KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
@@ -1712,23 +1706,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keydown(Object eventData, EventFunc handler);
-
-    /**
-     * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keydown(Object eventData, EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keydown(Object eventData, EventFunc2 handler);
+    public native JQueryElement<T> keydown(Object eventData, KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.
@@ -1741,14 +1719,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keypress(EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keypress(EventFunc2 handler);
+    public native JQueryElement<T> keypress(KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
@@ -1756,23 +1727,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keypress(Object eventData, EventFunc handler);
-
-    /**
-     * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keypress(Object eventData, EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keypress(Object eventData, EventFunc2 handler);
+    public native JQueryElement<T> keypress(Object eventData, KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.
@@ -1785,14 +1740,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keyup(EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keyup(EventFunc2 handler);
+    public native JQueryElement<T> keyup(KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
@@ -1800,23 +1748,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> keyup(Object eventData, EventFunc handler);
-
-    /**
-     * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keyup(Object eventData, EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> keyup(Object eventData, EventFunc2 handler);
+    public native JQueryElement<T> keyup(Object eventData, KeyEventFunc handler);
 
     /**
      * Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.

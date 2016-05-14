@@ -101,4 +101,10 @@ public interface Functions {
     interface EventFunc3<A, B, C> {
         Object call(Event e, A param1, B param2, C param3);
     }
+
+    @FunctionalInterface
+    @JsFunction
+    interface KeyEventFunc {
+        Object call(KeyEvent e);
+    }
 }
