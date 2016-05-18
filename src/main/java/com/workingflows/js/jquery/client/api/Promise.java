@@ -23,7 +23,7 @@ import jsinterop.annotations.JsType;
  *
  * @author Cristian Rinaldi
  */
-@JsType(name = "Promise")
+@JsType(name = "Promise", isNative=true)
 public interface Promise {
     
     Promise then(FuncRet2<Event, Object> f);
