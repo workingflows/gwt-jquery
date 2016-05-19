@@ -4,7 +4,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * Event for JQuery.
+ * KeyEvent for JQuery.
  * 
  * @author Ben Dol
  */
