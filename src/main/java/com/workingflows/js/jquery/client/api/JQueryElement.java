@@ -28,6 +28,7 @@ import com.workingflows.js.jquery.client.api.Functions.FuncRet1;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet2;
 import com.workingflows.js.jquery.client.api.Functions.FuncRet3;
 import com.workingflows.js.jquery.client.api.Functions.KeyEventFunc;
+import com.workingflows.js.jquery.client.api.Functions.MouseEventFunc;
 import com.workingflows.js.jscore.client.api.core.Node;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
@@ -550,15 +551,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return  self {@link JQueryElement}
      */
-    public native JQueryElement<T> click(EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "click" JavaScript event, or trigger that
-     * event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return  self {@link JQueryElement}
-     */
-    public native JQueryElement<T> click(EventFunc2 handler);
+    public native JQueryElement<T> click(MouseEventFunc handler);
 
     /**
      * Bind an event handler to the "click" JavaScript event, or trigger that
@@ -637,14 +630,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> contextmenu(EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> contextmenu(EventFunc2 handler);
+    public native JQueryElement<T> contextmenu(MouseEventFunc handler);
 
     /**
      * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
@@ -652,23 +638,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> contextmenu(Object eventData, EventFunc handler);
-
-    /**
-     * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> contextmenu(Object eventData, EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> contextmenu(Object eventData, EventFunc2 handler);
+    public native JQueryElement<T> contextmenu(Object eventData, MouseEventFunc handler);
 
     /**
      * Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.
@@ -741,14 +711,8 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> dblclick(EventFunc1 handler);
+    public native JQueryElement<T> dblclick(MouseEventFunc handler);
 
-    /**
-     * Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> dblclick(EventFunc2 handler);
 
     /**
      * Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
@@ -756,23 +720,7 @@ public class JQueryElement<T> extends Node {
      * @param handler A function to execute each time the event is triggered.
      * @return self {@link JQueryElement}
      */
-    public native JQueryElement<T> dblclick(Object eventData, EventFunc handler);
-
-    /**
-     * Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> dblclick(Object eventData, EventFunc1 handler);
-
-    /**
-     * Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.
-     * @param eventData An object containing data that will be passed to the event handler.
-     * @param handler A function to execute each time the event is triggered.
-     * @return self {@link JQueryElement}
-     */
-    public native JQueryElement<T> dblclick(Object eventData, EventFunc2 handler);
+    public native JQueryElement<T> dblclick(Object eventData, MouseEventFunc handler);
 
     /**
      * Set a timer to delay execution of subsequent items in the queue.

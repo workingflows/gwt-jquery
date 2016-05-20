@@ -107,4 +107,10 @@ public interface Functions {
     interface KeyEventFunc {
         Object call(KeyEvent e);
     }
+
+    @FunctionalInterface
+    @JsFunction
+    interface MouseEventFunc {
+        Object call(MouseEvent e);
+    }
 }
