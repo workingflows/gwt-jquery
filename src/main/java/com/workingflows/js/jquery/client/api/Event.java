@@ -9,7 +9,7 @@ import jsinterop.annotations.JsType;
  * 
  * @author Cristian Rinaldi
  */
-@JsType(name = "jQuery")
+@JsType(name = "jQuery", isNative=true)
 public class Event {
 
     @JsProperty

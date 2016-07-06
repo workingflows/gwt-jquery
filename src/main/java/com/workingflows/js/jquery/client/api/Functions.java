@@ -80,13 +80,37 @@ public interface Functions {
 
     @FunctionalInterface
     @JsFunction
-    interface EventFunc1 {
-        void call(Event e);
+    interface EventFunc {
+        Object call(Event e);
     }
 
     @FunctionalInterface
     @JsFunction
-    interface EventFunc2 {
-        Object call(Event e, Object o);
+    interface EventFunc1<A> {
+        Object call(Event e, A param1);
+    }
+
+    @FunctionalInterface
+    @JsFunction
+    interface EventFunc2<A, B> {
+        Object call(Event e, A param1, B param2);
+    }
+
+    @FunctionalInterface
+    @JsFunction
+    interface EventFunc3<A, B, C> {
+        Object call(Event e, A param1, B param2, C param3);
+    }
+
+    @FunctionalInterface
+    @JsFunction
+    interface KeyEventFunc {
+        Object call(KeyEvent e);
+    }
+
+    @FunctionalInterface
+    @JsFunction
+    interface MouseEventFunc {
+        Object call(MouseEvent e);
     }
 }
